@@ -6,13 +6,13 @@
     <title>Tech Future 2026 | 科技研討會</title>
     
     <style>
+        /* 全域變數 */
         :root {
             --primary-color: #2c3e50;
             --accent-color: #e74c3c;
             --text-light: #ecf0f1;
-            /* 定義統一的邊框顏色變數 */
             --unified-border: 1px solid #2c3e50; 
-            --shadow-strong: 0 10px 20px rgba(0,0,0,0.5); /* 加深陰影以配合深色背景 */
+            --shadow-strong: 0 10px 20px rgba(0,0,0,0.5); /* 加深陰影 */
         }
 
         * {
@@ -22,22 +22,21 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
+        /* 設定與固定背景 */
         body {
             line-height: 1.6;
-            color: #ecf0f1; /* 全域文字改為淺色，以適應深色背景 */
+            color: #ecf0f1; 
             
-            /* --- 修改重點 1: 固定背景設定 --- */
-            /* 設定背景圖片路徑 */
             background-image: url('images/background.jpg'); 
-            /* 讓背景固定不動 (Fixed Attachment) */
-            background-attachment: fixed; 
-            background-size: cover; /* 填滿整個畫面 */
+             background-attachment: fixed; /* 固定背景 (Fixed Attachment) */
+            background-size: cover; /* 填滿畫面 */
             background-position: center;
             background-repeat: no-repeat;
         }
 
+        /* 標題導覽 */
         nav {
-            background-color: rgba(44, 62, 80, 0.95); /*稍微透明一點*/
+            background-color: rgba(44, 62, 80, 0.95); 
             padding: 1rem;
             position: sticky; 
             top: 0;
@@ -74,7 +73,7 @@
             color: var(--accent-color);
         }
 
-        /* Hero Section 移除背景圖片，直接使用 Body 的背景 */
+        /* 首屏大圖區 */
         .hero {
             height: 80vh;
             display: flex;
@@ -82,7 +81,6 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            /* 為了讓文字在複雜背景上更清楚，加一點文字陰影 */
             text-shadow: 0 2px 10px rgba(0,0,0,0.8); 
         }
 
@@ -93,6 +91,7 @@
             color: white;
         }
 
+        /* 倒計時樣式 */
         #countdown {
             font-size: 2rem;
             background: rgba(0, 0, 0, 0.6);
@@ -100,7 +99,7 @@
             border-radius: 10px;
             margin-top: 20px;
             border: 1px solid rgba(255,255,255,0.3);
-            box-shadow: 0 0 15px rgba(0,255,255,0.2); /* 加一點科技感的藍光 */
+            box-shadow: 0 0 15px rgba(0,255,255,0.2); 
         }
 
         section {
@@ -112,9 +111,9 @@
         h2 {
             text-align: center;
             margin-bottom: 40px;
-            color: white; /* 在深色背景上，標題改為白色 */
+            color: white; 
             text-shadow: 0 2px 5px rgba(0,0,0,0.5);
-            border-bottom: 2px solid var(--accent-color); /* 加個底線裝飾 */
+            border-bottom: 2px solid var(--accent-color); 
             display: inline-block;
             padding-bottom: 10px;
         }
@@ -127,24 +126,20 @@
             text-align: center;
         }
 
-        /* --- 修改重點 2: 表格樣式統一 --- */
+        /* 表格樣式 */
         table {
             width: 100%;
-            border-collapse: collapse; /* 邊框合併，避免雙線 */
+            border-collapse: collapse; 
             margin-bottom: 20px;
-            background: white; /* 表格維持白色底 */
-            color: #333; /* 表格內文字維持深色 */
+            background: white; 
+            color: #333; 
             box-shadow: var(--shadow-strong);
-            
-            /* 統一外框 */
             border: var(--unified-border); 
         }
 
-        /* 針對 th (表頭) 和 td (儲存格) 設定統一的邊框 */
         th, td {
             padding: 15px;
             text-align: left;
-            /* 統一內線顏色 */
             border: var(--unified-border); 
         }
 
@@ -158,8 +153,8 @@
         }
 
         form {
-            background: white; /* 表單維持白色底 */
-            color: #333; /* 表單內文字維持深色 */
+            background: white; 
+            color: #333; 
             padding: 40px;
             border-radius: 8px;
             box-shadow: var(--shadow-strong);
@@ -228,7 +223,7 @@
         
         /* 調整影片和音訊容器 */
         .media-container {
-            background: rgba(255,255,255,0.1); /* 半透明底色襯托媒體 */
+            background: rgba(255,255,255,0.1); 
             padding: 20px;
             border-radius: 10px;
             backdrop-filter: blur(5px); /* 背景模糊效果 (Glassmorphism) */
@@ -271,16 +266,11 @@
         <div class="media-container">
             <p style="margin-bottom: 20px; font-size: 1.1rem;">這是一場匯集全球頂尖開發者的盛會。準備好迎接 AI、Web3 與量子運算的未來了嗎？</p>
             
-            <video width="80%" controls poster="https://via.placeholder.com/640x360?text=Tech+Video" style="box-shadow: 0 5px 15px rgba(0,0,0,0.5);">
-                <source src="movie.mp4" type="video/mp4">
+            <video width="80%" controls style="box-shadow: 0 5px 15px rgba(0,0,0,0.5);">
+                <source src="videos/10s.mp4" type="video/mp4">
                 您的瀏覽器不支援 Video 標籤。
             </video>
-            <br><br>
-            <p>聆聽去年的活動錄音：</p>
-            <audio controls style="margin-top: 10px;">
-                <source src="audio.mp3" type="audio/mpeg">
-                您的瀏覽器不支援 Audio 標籤。
-            </audio>
+
         </div>
     </section>
 
